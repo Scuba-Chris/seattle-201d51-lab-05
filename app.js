@@ -11,13 +11,13 @@ Test this function by hand in the console to get it working, and when you think 
 testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
-function sum(a, b, c = 0) { //eslint-disable-line
-  let sum = a + b + c;
+function sum(a, b) { //eslint-disable-line
+  let sum = a + b;
   var message = 'The sum of ' + a + ' and ' + b + ' is ' + sum + '.';
   return [sum, message];
 }
-console.log(sum(4, 7));
-sum(4,7,5);
+console.log(sum);
+sum(4,7);
 // testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a 
@@ -35,14 +35,14 @@ Test this function by hand in the console to get it working, and when you think 
 testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a, b, c = 1) { //eslint-disable-line
-  var multiply = a * b * c;
+function multiply(a, b) { //eslint-disable-line
+  var multiply = a * b;
   var message = 'The multiply of ' + a + ' and ' + b + ' is ' + multiply + '.';
   return [multiply, message];
 }
-console.log(multiply(5,9))
+console.log(multiply)
 
-multiply(4,7,5);
+multiply(5, 9)
 // testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a 
@@ -66,16 +66,13 @@ testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var sumThree = sum(a, b, c);
-  var timesThree = multiply(a, b, c);
-  var firstMessage = a + ' and ' + b + ' and ' + c + sumThree[0] + '.';
-  var secondMessage = a + ' and ' + b + ' and ' + c + timesThree[0] + '.';
+  var sumThree = sum(sum(a, b)[0], c);
+  var timesThree = multiply(multiply(a, b)[0], c);
+  var firstMessage = a + ' and ' + b + ' and ' + c + sumThree + '.';
+  var secondMessage = a + ' and ' + b + ' and ' + c + timesThree + '.';
 
-  return sumAndMultiply = [sumThree[0] , timesThree[0] + firstMessage, secondMessage];
+  return sumAndMultiply = [sumThree , timesThree, firstMessage, secondMessage];
   console.log(sumAndMultiply);
-
-
-
 }
 
 sumAndMultiply(4, 7, 5);
