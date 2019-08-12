@@ -15,7 +15,7 @@ function sum(a, b) { //eslint-disable-line
   var sum = a + b;
   var message = 'The sum of ' + a + ' and ' + b + ' is ' + sum + '.';
   return [sum, message];
-  console.log(sum1(4, 7));
+  console.log(sum(4, 7));
 }
 sum(4,7);
 // testSum(4, 7);
@@ -77,7 +77,6 @@ function sumAndMultiply(a, b, c) {
   console.log(sumAndMultiply);
 }
 sumAndMultiply(4,7,5)
-// sumAndMultiply(4, 7, 5); 
 // testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a 
@@ -101,13 +100,16 @@ testSumArray() function and see if the test passes.*/
 // Write your code here
 var testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) { //eslint-disable-line
-
+function sumArray(sumArr) {  //eslint-disable-line
+  var sumArr = sum(sum(sum(testArray))[0]);
+  var message = (sumArr + '');
+  return [sumArr, message];
+  console.log(sumArray);
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+sumArray(2,3,4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
