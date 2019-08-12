@@ -101,9 +101,10 @@ testSumArray() function and see if the test passes.*/
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {  //eslint-disable-line
-  var sumArr = sum(sum(sum(testArray))[0]);
-  var message = (sumArr + '');
-  return [sumArr, message];
+  var sum4 = sum(testArray[0], testArray[1]).shift();
+  var sum5 = sum(sum4, testArray[2]).shift();
+  var message = (sum5 + ', 2,3,4 was passed in as an array of numbers, and 9 is their sum.');
+  return [sum5, message];
   console.log(sumArray);
 }
 
