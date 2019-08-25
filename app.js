@@ -12,12 +12,12 @@ testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-  let sum = a + b;
-  var message = 'The sum of ' + a + ' and ' + b + ' is ' + sum + '.';
-  return [sum, message];
+    var sum = a + b;
+    var message = 'The sum of ' + a + ' and ' + b + ' is ' + sum + '.';
+    return [sum, message];
+    console.log(sum(4, 7));
 }
-console.log(sum);
-sum(4,7);
+sum(4, 7);
 // testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a 
@@ -35,14 +35,14 @@ Test this function by hand in the console to get it working, and when you think 
 testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a, b) { //eslint-disable-line
-  var multiply = a * b;
-  var message = 'The multiply of ' + a + ' and ' + b + ' is ' + multiply + '.';
-  return [multiply, message];
+function multiply(a, b) {
+    var multiply = a * b;
+    var message = 'The multiply of ' + a + ' and ' + b + ' is ' + multiply + '.';
+    return [multiply, message];
+    console.log(multiply(5, 9))
 }
-console.log(multiply)
 
-multiply(5, 9)
+multiply(5, 9);
 // testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a 
@@ -65,41 +65,52 @@ Test this function by hand in the console to get it working, and when you think 
 testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var sumThree = sum(sum(a, b)[0], c);
-  var timesThree = multiply(multiply(a, b)[0], c);
-  var firstMessage = a + ' and ' + b + ' and ' + c + sumThree + '.';
-  var secondMessage = a + ' and ' + b + ' and ' + c + timesThree + '.';
 
-  return sumAndMultiply = [sumThree , timesThree, firstMessage, secondMessage];
-  console.log(sumAndMultiply);
+function sumAndMultiply(a, b, c) {
+    var sumThree = sum(sum(a, b)[0], c);
+    var timesThree = multiply(sum(a, b)[0], c);
+    var firstMessage = a + ' and ' + b + ' and ' + c + ' is ' + sumThree;
+    var secondMessage = a + ' and ' + b + ' and ' + c + ' is ' + timesThree;
+
+    return [sumThree, timesThree, firstMessage, secondMessage];
+
+    console.log(sumAndMultiply);
 }
+sumAndMultiply(4, 7, 5)
+    // testSumAndMultiply(4,7,5);
 
-sumAndMultiply(4, 7, 5);
-// testSumAndMultiply(4,7,5);
-
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a 
+// new branch for your work on the next question!
 
 /////////////////////////////////////
 /* Problem 4
-Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an array where the first element is the sum of the numbers in the array, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
+Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an array where the 
+first element is the sum of the numbers in the array, and the second element is a string that EXACTLY follows this example and uses 
+the values that were input into the function:
 
 "2,3,4 was passed in as an array of numbers, and 9 is their sum."
 
-IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To do addition, use your sum() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
+IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To do addition, use your sum() function that you've 
+already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator 
+for string concatenation.
 
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
+Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the 
+testSumArray() function and see if the test passes.*/
 
 // Write your code here
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+    var sum4 = sum(testArray[0], testArray[1]).shift();
+    var sum5 = sum(sum4, testArray[2]).shift();
+    var message = (sum5 + ', 2,3,4 was passed in as an array of numbers, and 9 is their sum.');
+    return [sum5, message];
+    console.log(sumArray);
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+sumArray(2, 3, 4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -114,10 +125,17 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(multArr) { //eslint-disable-line
+var multiArray = [2, 3, 4, ];
 
+function multiplyArray(multArr) { //eslint-disable-line
+    var multiply3 = multiply(multiArray[0], multiArray[1]).shift();
+    var multiply4 = multiply(multiply3, multiArray[2]).shift();
+    var message = (multiply4, 'The numbers 2,3,4 have a product of 24.');
+    return [multi4, message];
+    console.log(multArr);
 }
 
+multiplyArray(2, 3, 4);
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
 
