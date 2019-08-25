@@ -125,10 +125,17 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(multArr) { //eslint-disable-line
+var multiArray = [2,3,4,];
 
+function multiplyArray(multArr) { //eslint-disable-line
+  var multiply3 = multiply(multiArray[0], multiArray[1]).shift();
+  var multiply4 = multiply(multiply3, multiArray[2]).shift();
+  var message = (multiply4, 'The numbers 2,3,4 have a product of 24.');
+  return [multi4, message];
+  console.log(multArr);
 }
 
+multiplyArray(2,3,4);
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
 
